@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC
+        "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="config.properties"></properties>
+    <environments default="development">
+        <environment id="test">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///yang"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--将写好的sql映射文件注册到全局配置文件中，类路径下直接写 UserMapper.xml就行，要是在包中则写com/yunqing/.../UserMapper.xml-->
+    <mappers>
+        <!--<mapper resource="conf/UserMapper.xml"/>-->
+        <!--<mapper class="com.yunqing.mybatis.dao.UserMapperAnnotation"/>-->
+        <package name="com.yang.web.dao"/>
+    </mappers>
+</configuration>
