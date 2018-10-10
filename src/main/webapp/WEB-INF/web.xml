@@ -6,7 +6,7 @@
   <display-name>Archetype Created Web Application</display-name>
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>com.yang.web.Login</servlet-class>
+        <servlet-class>com.yang.web.Land.Login</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>

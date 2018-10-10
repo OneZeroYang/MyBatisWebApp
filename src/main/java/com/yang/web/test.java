@@ -24,17 +24,23 @@ public class test {
         //获取sqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
+
      //   User mapper = sqlSession.getMapper(User.class);
         UserMapping mapper = sqlSession.getMapper(UserMapping.class);
-//        User userById = mapper.findUserById("123123");
+      //  User userById = mapper.findUserById("123123");
 
         List<User> userById = mapper.findUserById();
-        User idById = mapper.getUserById("123123");
-        String password = idById.getPassword();
+//        User idById = mapper.getUserById("123123");
+//        String password = idById.getPassword();
+
+
+
+        mapper.addUser(new User("123","123"));
 //        System.out.print(userById.getPassword());
         System.out.println(userById);
-
-        System.out.print("==="+password);
+//
+//        System.out.print("==="+password);
+      //  sqlSession.commit();
         sqlSession.close();
     }
 }

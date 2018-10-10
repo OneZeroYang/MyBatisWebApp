@@ -8,4 +8,10 @@
     <select id="getUserById" resultType="com.yang.web.bean.User" parameterType="String">
         select * from user where id = #{id}
     </select>
+
+    <insert id="addUser" parameterType="com.yang.web.bean.User">
+       insert into user (id,password) values(#{id},#{password})
+    </insert>
+
+
 </mapper>
