@@ -9,7 +9,12 @@ import java.util.*;
 public class TokenManage {
     private static Map<String,String> tokens=new HashMap<>();
     public static boolean VerificationToken(String id,String token){
+
         String s1 = tokens.get(id);
+        System.out.println(s1+"======"+id);
+        if (s1==null){
+            return false;
+        }
         if (s1.equals(token)){
             return true;
         }else {
@@ -22,8 +27,14 @@ public class TokenManage {
         token.setId(id);
         token.setToken(getRandomString2(16));
         tokens.put(id,token.getToken());
+
+        System.out.println(tokens.get(id));
         return token;
     }
+
+
+
+
     public static String getRandomString2(int length){
         //产生随机数
         Random random=new Random();

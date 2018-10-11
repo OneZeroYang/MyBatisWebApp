@@ -14,4 +14,10 @@
     </insert>
 
 
+    <insert id="addinfo" parameterType="com.yang.web.bean.UserInFo">
+       insert into user_info (id,name,age,mobile,portrait,major) values(#{id},#{name},#{age},#{mobile},#{portrait},#{major})
+
+    </insert>
+
+
 </mapper>

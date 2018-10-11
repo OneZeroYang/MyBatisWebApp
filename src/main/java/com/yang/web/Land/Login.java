@@ -15,6 +15,7 @@ public class Login extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String id = request.getParameter("id");
         String password = request.getParameter("password");
+
         try {
             SqlSession sqlSession = DbUtils.getSqlSession();
             UserMapping mapper = sqlSession.getMapper(UserMapping.class);
@@ -36,7 +37,9 @@ public class Login extends javax.servlet.http.HttpServlet {
             }
             String json= new Gson().toJson(ml);
             response.getWriter().write(json);
-        }catch (Exception e){
+            System.out.print(id);
+        }catch (Exception e){ ;
+            e.printStackTrace();
         }
     }
 

@@ -1,6 +1,7 @@
 package com.yang.web.dao;
 
 import com.yang.web.bean.User;
+import com.yang.web.bean.UserInFo;
 import org.apache.ibatis.annotations.Select;
 
 
@@ -24,6 +25,8 @@ public interface UserMapping {
     User getUserById(String id);
 
     void addUser(User user);
+
+    void addinfo(UserInFo userInFo);
 
 
 
